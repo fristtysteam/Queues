@@ -12,11 +12,11 @@ import java.util.Objects;
 //3. An equals() method and a hashCode() method – these should base their calculation on the owner, description
 //and deadline fields.
 //4. A toString() method that returns the artist and title information in a well-formatted manner.
-public abstract class Task implements Comparable<Task>{
+public class Task {
 
-    private String owner;
-    private String description;
-    private LocalDate deadline;
+    protected String owner;
+    protected String description;
+    protected LocalDate deadline;
 
     public Task(String owner, String description, LocalDate deadline) {
         LocalDate currentDate = LocalDate.now();
@@ -71,7 +71,8 @@ public abstract class Task implements Comparable<Task>{
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
-            return true;
+            throw new IllegalArgumentException("Both objects are the same?");
+           
         }
         if (obj == null) {
             return false;
