@@ -71,7 +71,7 @@ public class Task {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
-            throw new IllegalArgumentException("Both objects are the same?");
+           return true;
            
         }
         if (obj == null) {
